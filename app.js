@@ -11,9 +11,8 @@ console.log(numPlanets); // ?
 console.log(yearNeptuneDiscovered); // ?
 */
 
-
-
-
+let answer1 = 8
+let answer2 = 1846
 
 
 /*
@@ -31,7 +30,8 @@ let {numPlanets, ...discoveryYears} = planetFacts;
 console.log(discoveryYears); // ?
 */
 
-
+let answer3 = {yearNeptuneDiscovered: 1846,
+    yearMarsDiscovered: 1659};
 
 
 
@@ -49,7 +49,11 @@ getUserData({firstName: "Melissa"}) // ?
 getUserData({}) // ?
 */
 
+let answer4 = `Your name is Alejandro and you like purple`
 
+let answer5 = `Your name is Melissa and you like green`
+
+let answer6 = `Your name is Undefined and you like green`
 
 
 
@@ -65,9 +69,9 @@ console.log(second); // ?
 console.log(third); // ?
 */
 
-
-
-
+let answer7 = "Maya"
+let answer8 = "Marisa"
+let answer9 = "Chi"
 
 /*
 Array Destructuring 2
@@ -87,9 +91,10 @@ console.log(aFewOfMyFavoriteThings); // ?
 */
 
 
-
-
-
+let answer10 = "Raindrops on roses"
+let answer11 = "whiskers on kittens"
+let answer12 = ["Bright copper kettles","warm woolen mittens",
+"Brown paper packages tied up with strings"]
 
 /*
 Array Destructuring 3
@@ -101,6 +106,8 @@ let numbers = [10, 20, 30];
 console.log(numbers) // ?
 */
 
+let answer13 = [10,30,20]
+
 
 /*
 ES2015 Refactoring
@@ -110,6 +117,7 @@ In this exercise, you’ll refactor some ES5 code into ES2015.
 
 /*
 ES5 Assigning Variables to Object Properties
+
 var obj = {
   numbers: {
     a: 1,
@@ -123,6 +131,16 @@ var b = obj.numbers.b;
 
 Write an ES2015 Version
 */
+
+var obj = {
+    numbers: {
+      a: 1,
+      b: 2
+    }
+  };
+
+let {numbers: {a,b}} = obj;
+// ANSWER: const {a,b} = obj.numbers
 
 
 
@@ -138,8 +156,8 @@ arr[1] = temp;
 
 Write an ES2015 Version
 */
-
-
+let arr = [1,2];
+[arr[0],arr[1]] = [arr[1],arr[0]]
 
 
 /*
@@ -152,9 +170,9 @@ third: the third element in the array
 rest: all other elements in the array
 
 Write a one line function to make this work using
-An arrow function
-Destructuring
-‘Enhanced’ object assignment (same key/value shortcut)
+- An arrow function
+- Destructuring
+- ‘Enhanced’ object assignment (same key/value shortcut)
 raceResults(['Tom', 'Margaret', 'Allison', 'David', 'Pierre'])
 
 /*
@@ -165,6 +183,21 @@ raceResults(['Tom', 'Margaret', 'Allison', 'David', 'Pierre'])
     rest: ["David", "Pierre"]
   }
 */
+
+// let arr2 = ['Tom', 'Margaret', 'Allison', 'David', 'Pierre']
+
+const raceResults = (arr2) => {
+    let [first,second, third, ...rest] = arr2
+    return {
+        first,
+        second,
+        third,
+        rest
+    }
+};
+
+// ANSWER: const raceResults = ([first, second, third, ...rest]) => ({first, second, third, rest})
+
 
 
 
